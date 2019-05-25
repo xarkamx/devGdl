@@ -1,6 +1,4 @@
-
-interface iJWTCredentials {
-    username: string;
-    password: string;
+export interface iJWTCredentials {
+  username: string;
+  password: string;
 }
-
