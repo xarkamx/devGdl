@@ -3,6 +3,7 @@
   height: 30px;
   cursor: pointer;
   padding: 0;
+  z-index: 10;
   div {
     height: 5px;
     width: 100%;
@@ -10,6 +11,7 @@
     margin: 5px;
     background: white;
     transition: 0.5s;
+    box-shadow: 1px 1px 1px #333;
   }
   &:hover div:first-child,
   &.active div:first-child {
