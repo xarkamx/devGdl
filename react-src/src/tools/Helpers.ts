@@ -5,13 +5,13 @@ export class Helpers {
     // tslint:disable-next-line:forin
     for (const k in keys) {
       const value =
-        typeof param[keys[k]] === 'object' &&
+        typeof param[keys[k]] === "object" &&
         Array.isArray(param[keys[k]]) === false
           ? JSON.stringify(param[keys[k]])
           : param[keys[k]];
-      values.push(keys[k] + '=' + value);
+      values.push(keys[k] + "=" + value);
     }
-    return values.join('&');
+    return values.join("&");
   }
 
   findInArrayOfObjects(arrg: any, key: string, value: string) {
@@ -37,7 +37,7 @@ export class Helpers {
     for (const index in objs) {
       const obj = objs[index];
       for (const keys in obj) {
-        if (obj[keys] !== '') {
+        if (obj[keys] !== "") {
           finalObject[keys] = obj[keys];
         }
       }
@@ -71,7 +71,7 @@ export class Helpers {
           continue;
         }
         const data = item[key].toString();
-        const regQuery = RegExp(query, 'i');
+        const regQuery = RegExp(query, "i");
         const match = data.match(regQuery);
         if (match != null) {
           return true;
@@ -111,7 +111,7 @@ export class Helpers {
   }
   searchCommonAndUpdate(contentID: any, newData: any, currentData: Array<any>) {
     const data: any = this.flatMultilevel(newData);
-    const index: any = this.searchAndGetIndex(currentData, 'id', contentID);
+    const index: any = this.searchAndGetIndex(currentData, "id", contentID);
     for (const key in data) {
       if (currentData[index][key] !== undefined) {
         currentData[index][key] = data[key];
@@ -121,9 +121,9 @@ export class Helpers {
   }
   splitOnUpperCase(text: any) {
     text = text.split(/(?=[A-Z])/);
-    return text.join(' ');
+    return text.join(" ");
   }
-  orderBy(data: any, by: any, direction: String = 'asc') {
+  orderBy(data: any, by: any, direction: String = "asc") {
     return data.sort((a: any, b: any) => {
       if (a[by] == null) {
         return 1;
@@ -131,12 +131,12 @@ export class Helpers {
       if (b[by] == null) {
         return 1;
       }
-      if (typeof a[by] !== 'number') {
-        return direction === 'asc'
+      if (typeof a[by] !== "number") {
+        return direction === "asc"
           ? a[by].localeCompare(b[by])
           : b[by].localeCompare(a[by]);
       }
-      return direction === 'asc' ? a[by] - b[by] : b[by] - a[by];
+      return direction === "asc" ? a[by] - b[by] : b[by] - a[by];
     });
   }
   dateToYears(fecha: any) {
@@ -146,4 +146,7 @@ export class Helpers {
     const age_dt = new Date(diff);
     return Math.abs(age_dt.getUTCFullYear() - 1970);
   }
+}
+export function optional(callback: any) {
+  return typeof callback === "function" ? callback : () => {};
 }
