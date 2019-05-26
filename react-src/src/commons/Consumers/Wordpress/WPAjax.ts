@@ -14,7 +14,8 @@ export enum WP {
   tags = "/tags",
   users = "/users",
   comments = "/comments",
-  settings = "/settings"
+  settings = "/settings",
+  menu = "/theme/menu/3"
 }
 export class WPAjax extends Ajax implements iConsumer {
   public url: string;
@@ -81,20 +82,23 @@ export class WPAjax extends Ajax implements iConsumer {
     for (const index in rules) {
       const rule = rules[index];
       if (rule.required) {
-        if (filter[index] === undefined) throw index + " es requerido";
+        if (filter[index] === undefined)
+          throw new Error(index + " es requerido");
       }
       if (filter[index] === undefined) continue;
 
       if (typeof filter[index] != rule.type) {
         console.log(typeof filter[index].prototype, rule.type);
       }
-      if (rule.enum != undefined) {
-        if (rule.enum.indexOf(filter[index]) == -1) {
-          throw index +
-            " contiene un valor invalido (" +
-            filter[index] +
-            "), se esperaba alguno de los siguientes: " +
-            rule.enum.join();
+      if (typeof rule.enum !== "undefined") {
+        if (rule.enum.indexOf(filter[index]) === -1) {
+          throw new Error(
+            index +
+              " contiene un valor invalido (" +
+              filter[index] +
+              "), se esperaba alguno de los siguientes: " +
+              rule.enum.join()
+          );
         }
       }
     }

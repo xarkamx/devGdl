@@ -16,7 +16,7 @@
 
 
 
-			</template>
+			</noscript>
 			<div id="root"></div>
 			<!--
         This PHP file is a template.

@@ -31,3 +31,24 @@
     transform: rotate(360deg);
   }
 }
+.burguerButton {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  cursor: pointer;
+  padding: 0;
+}
+.burguerButton div {
+  height: 5px;
+  width: 100%;
+  display: block;
+  margin: 5px;
+  background: white;
+  transition: 0.5s;
+}
+.burguerButton:hover div:first-child {
+  transform: translateY(10px) rotateZ(135deg);
+}
+.burguerButton:hover :last-child {
+  transform: translateY(-10px) rotateZ(45deg);
+}

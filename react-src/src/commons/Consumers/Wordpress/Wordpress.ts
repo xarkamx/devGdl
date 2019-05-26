@@ -1,14 +1,14 @@
-import { IWPosts, IWPages, IWMedia } from "./iWPosts.js";
-import { WPAjax, WP } from "./WPAjax.js";
-import { JWTAccess } from "./jwtAccess.js";
-import { iJWTCredentials } from "./ijwt.js";
+import { IWPosts, IWPages, IWMedia } from "./iWPosts";
+import { WPAjax, WP } from "./WPAjax";
+import { JWTAccess } from "./jwtAccess";
+import { iJWTCredentials } from "./ijwt";
 export class Wordpress {
   public path: string;
   public wpfetch: WPAjax;
   public access: JWTAccess;
   public credentials: iJWTCredentials;
   constructor(path: string, credentials: any = null, access: any = null) {
-    this.path = path;
+    this.path = path || "http://localhost:8000/";
     this.credentials = credentials;
     this.wpfetch = new WPAjax(path);
     this.access = access == null ? new JWTAccess() : access;

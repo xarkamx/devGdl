@@ -1,11 +1,11 @@
-import { Helpers } from './Helpers.js';
+import { Helpers } from "./Helpers";
 export class Ajax extends Helpers {
   async fetchData(
     path: string,
     parameters = {},
-    method = 'get',
+    method = "get",
     headers: any = {
-      'Content-Type': 'application/x-www-form-urlencoded'
+      "Content-Type": "application/x-www-form-urlencoded"
     }
   ) {
     parameters = this.objectToSerialize(parameters);
@@ -14,14 +14,13 @@ export class Ajax extends Helpers {
       body: null,
       method
     };
-    if (method.toLowerCase() === 'get') {
-      path += '?' + parameters;
-      parameters = '';
+    if (method.toLowerCase() === "get") {
+      path += "?" + parameters;
+      parameters = "";
     } else {
       args.body = parameters;
     }
     args.method = method;
-    console.table(args.body)
     const data = await fetch(path, args);
     const result = await data.text();
     try {

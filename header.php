@@ -44,7 +44,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<template>
+	<noscript>
 		<!-- wrapper -->
 		<div class="wrapper">
 
