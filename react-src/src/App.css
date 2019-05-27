@@ -16,6 +16,7 @@
   color: white;
   position: absolute;
   width: 100vw;
+  z-index: 9;
 }
 
 .App-link {

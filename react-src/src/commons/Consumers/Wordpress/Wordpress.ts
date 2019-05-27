@@ -7,7 +7,7 @@ export class Wordpress {
   public wpfetch: WPAjax;
   public access: JWTAccess;
   public credentials: iJWTCredentials;
-  constructor(path: string, credentials: any = null, access: any = null) {
+  constructor(path: string = "", credentials: any = null, access: any = null) {
     this.path = path || "http://localhost:8000/";
     this.credentials = credentials;
     this.wpfetch = new WPAjax(path);
