@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { AsyncRequest } from "./../../tools/AsyncRequest";
 import { WP } from "../../commons/Consumers/Wordpress/WPAjax";
 import { ViewContainer } from "./ViewContainer";

@@ -18,7 +18,7 @@ export default class App extends React.Component {
     this.setState({ content: content.innerHTML });
   }
   getPostID() {
-    let content = this._checkDom().querySelector("");
+    this._checkDom().querySelector("");
   }
   _checkDom() {
     const noscript: any = document.body.querySelector("noscript");

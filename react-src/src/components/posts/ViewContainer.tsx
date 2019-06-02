@@ -9,19 +9,17 @@ export function ViewContainer(props: any) {
   let container: any = useRef();
   useEffect(() => {
     container.current.insertAdjacentHTML("beforeend", children);
+    document.body.addEventListener("scroll", ev => {
+      console.log(ev);
+    });
   });
   return (
     <article className="viewContainer">
-      <div
-        className="background"
-        style={{ background: `url(${backgroundIMG})` }}
-      >
-        <div className="bgImg">
-          <header className="fancyHeader">Hola!</header>
-        </div>
-        <div className="bgText">
-          <main ref={container} />
-        </div>
+      <div className="bgImg" style={{ background: `url(${backgroundIMG})` }}>
+        <header className="fancyHeader">Hola!</header>
+      </div>
+      <div className="bgText">
+        <main ref={container} />
       </div>
     </article>
   );
