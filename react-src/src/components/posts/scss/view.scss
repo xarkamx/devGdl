@@ -1,7 +1,7 @@
 .viewContainer {
   position: relative;
   * {
-    transition: 1s ease-in;
+    transition: 0.5s ease-in;
   }
   .bgText {
     overflow: hidden;
@@ -9,7 +9,7 @@
     height: 100vh;
     width: 70vw;
     margin: auto;
-    main {
+    & main {
       color: #333;
       text-align: justify;
       padding: 3rem;
@@ -22,22 +22,42 @@
     background-position: center !important;
     background-attachment: fixed !important;
     background-repeat: no-repeat !important;
-    background-color: black !important;
     background-size: cover !important;
-    transform: skewY(7deg);
   }
   .fancyHeader {
-    font-size: 28rem;
-    text-shadow: 6px 9px 13px #33e3ff;
+    font-size: 24vw;
+    text-shadow: 6px 9px 13px #333;
     color: white;
     display: grid;
     height: 100vh;
     align-content: center;
     text-align: center;
     text-transform: uppercase;
-    background: #000000bd;
-    mix-blend-mode: darken;
     cursor: default;
     font-weight: bolder;
+  }
+}
+.mini {
+  display: grid;
+  grid-template-rows: 33.33vh;
+  grid-template-columns: 70vw 30vw;
+  .bgImg,
+  .bgText {
+    width: 100%;
+    height: 100%;
+    .fancyHeader {
+      height: 100%;
+      font-size: 4rem;
+    }
+  }
+  &:nth-child(odd) {
+    grid-template-columns: 30vw 70vw;
+    .bgImg {
+      grid-column: 2 / 2;
+    }
+    .bgText {
+      grid-column: 1/1;
+      grid-row: 1/1;
+    }
   }
 }

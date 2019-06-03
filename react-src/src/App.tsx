@@ -10,7 +10,7 @@ export default class App extends React.Component {
     content: ""
   };
   componentDidMount() {
-    this.loadTemplate();
+    //this.loadTemplate();
   }
   loadTemplate() {
     let content = this._checkDom();
@@ -34,7 +34,6 @@ export default class App extends React.Component {
           <img src={logo} className="App-logo" alt="logo" />
           <Menu />
         </header>
-        <ViewContainer>{content}</ViewContainer>
 
         <Posts />
       </div>

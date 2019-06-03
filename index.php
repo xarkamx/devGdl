@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <link rel="shortcut icon" href="/wp-content/themes/my_react_theme/favicon.ico">
+    <link rel="shortcut icon" href="/wp-content/themes/devGdl/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
     <!--
@@ -17,12 +17,12 @@
         If you're reading this from "view source" in your browser, it might not make sense as
         these tokens have already been evaluated and replaced, even in this remark blurb.
 
-        Notice the use of "php echo $TEMPLATE_PATH;" and /wp-content/themes/my_react_theme in the tags above.
-        Both will be replaced with the URL of the `public` folder during the build (/wp-content/themes/my_react_theme) or
+        Notice the use of "php echo $TEMPLATE_PATH;" and /wp-content/themes/devGdl in the tags above.
+        Both will be replaced with the URL of the `public` folder during the build (/wp-content/themes/devGdl) or
         at render time (php echo $TEMPLATE_PATH;)
         Only files inside the `public` folder can be referenced like this.
 
-        Unlike "/favicon.ico" or "favicon.ico", "/wp-content/themes/my_react_theme/favicon.ico" will
+        Unlike "/favicon.ico" or "favicon.ico", "/wp-content/themes/devGdl/favicon.ico" will
         work correctly both with client-side routing and a non-root public URL.
         Learn how to configure a non-root public URL by running `npm run wpbuild`.
     -->
@@ -49,5 +49,5 @@
         To begin the development, run `npm run wpstart` or `yarn wpstart`.
         To create a production bundle, use `npm run wpbuild` or `yarn wpbuild`.
     -->
-    <script src="/wp-content/themes/my_react_theme/static/js/bundle.js"></script><script src="/wp-content/themes/my_react_theme/static/js/0.chunk.js"></script><script src="/wp-content/themes/my_react_theme/static/js/main.chunk.js"></script></body>
+    <script src="/wp-content/themes/devGdl/static/js/bundle.js"></script><script src="/wp-content/themes/devGdl/static/js/1.chunk.js"></script><script src="/wp-content/themes/devGdl/static/js/main.chunk.js"></script></body>
 </html>

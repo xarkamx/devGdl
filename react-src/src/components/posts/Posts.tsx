@@ -16,8 +16,16 @@ export function Posts(props: any) {
   return (
     <>
       {posts.map((item: any) => {
+        const { id, content, excerpt, title } = item;
         return (
-          <ViewContainer key={item.id}>{item.content.rendered}</ViewContainer>
+          <ViewContainer
+            mini
+            title={title.rendered}
+            excerpt={excerpt.rendered}
+            key={id}
+          >
+            {content.rendered}
+          </ViewContainer>
         );
       })}
     </>

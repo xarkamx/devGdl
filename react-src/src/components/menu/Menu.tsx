@@ -9,7 +9,7 @@ export function Menu() {
   const load = async () => {
     const fetch: any = AsyncRequest("/wp-json/theme/menu/3");
     const post = await fetch.get();
-    setMenu(post);
+    setMenu(post || []);
   };
   useEffect(() => {
     load();
