@@ -1,7 +1,7 @@
 {
   "files": {
-    "static/js/1.chunk.js": "/wp-content/themes/devGdl/static/js/1.chunk.js",
-    "static/js/1.chunk.js.map": "/wp-content/themes/devGdl/static/js/1.chunk.js.map",
+    "static/js/0.chunk.js": "/wp-content/themes/devGdl/static/js/0.chunk.js",
+    "static/js/0.chunk.js.map": "/wp-content/themes/devGdl/static/js/0.chunk.js.map",
     "main.js": "/wp-content/themes/devGdl/static/js/main.chunk.js",
     "main.js.map": "/wp-content/themes/devGdl/static/js/main.chunk.js.map",
     "runtime~main.js": "/wp-content/themes/devGdl/static/js/bundle.js",
