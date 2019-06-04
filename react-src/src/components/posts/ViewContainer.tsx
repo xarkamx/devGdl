@@ -2,24 +2,33 @@ import React, { useRef, useEffect, useState } from "react";
 import "./scss/view.scss";
 
 export function ViewContainer(props: any) {
-  const imgID = Math.floor(Math.random() * 451);
-  const { children, excerpt, mini, title, embed } = props;
+  const { children, excerpt, mini, title, embed, background, isFront } = props;
   const [minified, setMinified] = useState(mini);
   let container: any = useRef();
-  const media = embed["wp:featuredmedia"];
-  console.log(media);
-  const backgroundIMG = media
-    ? media[0].source_url
-    : `https://picsum.photos/id/${imgID}/1920/1080`;
+  const loadBackground = () => {
+    const imgID = Math.floor(Math.random() * 851);
+    const sampleImage =
+      background || `https://picsum.photos/id/${imgID}/1920/1080`;
+    if (!embed) {
+      return sampleImage;
+    }
+    const media = embed["wp:featuredmedia"];
+    return media ? media[0].source_url : sampleImage;
+  };
+  const backgroundIMG = loadBackground();
   useEffect(() => {
     container.current.innerHTML = minified ? excerpt : children;
   });
   return (
-    <article className={`viewContainer ${minified ? "mini" : ""}`}>
+    <article
+      className={`viewContainer ${minified ? "mini" : ""} ${
+        isFront ? "front" : ""
+      }`}
+    >
       <div
         className="bgImg"
         onClick={() => {
-          setMinified(!minified);
+          if (!isFront) setMinified(!minified);
         }}
         style={{ background: `url(${backgroundIMG})` }}
       >

@@ -1,8 +1,9 @@
 <?php
   $TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH);
+  $IMG = wp_get_attachment_image_src( get_post_thumbnail_id( $wp_query->post->ID ))[0];
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
@@ -26,11 +27,37 @@
         work correctly both with client-side routing and a non-root public URL.
         Learn how to configure a non-root public URL by running `npm run wpbuild`.
     -->
-    <title>React WordPress Theme</title>
+    <title><?php echo $wp_query->post->post_title ?></title>
 </head>
     <body>
     <noscript>
-        You need to enable JavaScript to run this app.
+        <div 
+            id="<?php echo $wp_query->post->ID; ?>"
+            class="container"> 
+            <?php echo wp_nav_menu(  )?>
+            <h1>
+            <?php echo $wp_query->post->post_title ?>
+        </h1>
+        <img src="<?php
+            echo $IMG;
+        ?>" alt="<?php echo $wp_query->post->post_title ?>"
+            data-path="<?php
+            echo $IMG;
+        ?>"
+        />
+        <article>
+            <?php
+              echo $wp_query->post->post_content;
+        ?>
+        </article>
+        <div class="excerpt">
+            <?php
+              echo get_the_excerpt( $wp_query->post );
+        ?>
+        </div>
+        </div>
+        
+        
     </noscript>
     <div id="root"></div>
     <!--

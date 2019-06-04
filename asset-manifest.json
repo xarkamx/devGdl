@@ -1,12 +1,12 @@
 {
   "files": {
-    "static/js/0.chunk.js": "/wp-content/themes/devGdl/static/js/0.chunk.js",
-    "static/js/0.chunk.js.map": "/wp-content/themes/devGdl/static/js/0.chunk.js.map",
+    "static/js/1.chunk.js": "/wp-content/themes/devGdl/static/js/1.chunk.js",
+    "static/js/1.chunk.js.map": "/wp-content/themes/devGdl/static/js/1.chunk.js.map",
     "main.js": "/wp-content/themes/devGdl/static/js/main.chunk.js",
     "main.js.map": "/wp-content/themes/devGdl/static/js/main.chunk.js.map",
     "runtime~main.js": "/wp-content/themes/devGdl/static/js/bundle.js",
     "runtime~main.js.map": "/wp-content/themes/devGdl/static/js/bundle.js.map",
     "index.php": "/wp-content/themes/devGdl/index.php",
-    "static/media/logo.svg": "/wp-content/themes/devGdl/static/media/logo.ee7cd8ed.svg"
+    "static/media/logo.svg": "/wp-content/themes/devGdl/static/media/logo.5d5d9eef.svg"
   }
 }
