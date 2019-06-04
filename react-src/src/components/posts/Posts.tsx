@@ -6,8 +6,7 @@ export function Posts(props: any) {
   const [posts, setPosts] = useState([]);
   const load = async () => {
     const fetch = AsyncRequest(`${WP.sufix}${WP.posts}`);
-    const post = await fetch.get();
-    console.log(post);
+    const post = await fetch.get({ _embed: "" });
     setPosts(post);
   };
   useEffect(() => {
@@ -16,12 +15,13 @@ export function Posts(props: any) {
   return (
     <>
       {posts.map((item: any) => {
-        const { id, content, excerpt, title } = item;
+        const { id, content, excerpt, title, _embedded } = item;
         return (
           <ViewContainer
             mini
             title={title.rendered}
             excerpt={excerpt.rendered}
+            embed={_embedded}
             key={id}
           >
             {content.rendered}
