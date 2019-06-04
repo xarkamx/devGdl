@@ -3,7 +3,6 @@ import logo from "./logo.svg";
 import "./App.css";
 import { Menu } from "./components/menu/Menu";
 import { Posts } from "./components/posts/Posts";
-import { ViewContainer } from "./components/posts/ViewContainer";
 
 export default class App extends React.Component {
   state = {
@@ -27,7 +26,6 @@ export default class App extends React.Component {
     return content;
   }
   render() {
-    const { content } = this.state;
     return (
       <div className="App">
         <header className="App-header">
